@@ -1,18 +1,16 @@
-import PropTypes from 'prop-types';
+import { Context } from 'context/stateContext';
+import { useContext } from 'react';
 
-export default function FeedbackOptions({ options, onLeaveFeedback }) {
+export default function FeedbackOptions({ options }) {
+    const { handleFeedback } = useContext(Context);
+
     return (
         <div>
             {options.map((option) => (
-                <button key={option} onClick={() => onLeaveFeedback(option)}>
+                <button key={option} onClick={() => handleFeedback(option)}>
                     {option}
                 </button>
             ))}
         </div>
     );       
-};
-
-FeedbackOptions.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-  onLeaveFeedback: PropTypes.func.isRequired,
 };
