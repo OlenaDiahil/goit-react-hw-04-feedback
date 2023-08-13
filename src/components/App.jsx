@@ -8,7 +8,7 @@ import { useContext } from "react";
 export default function App() {
   const { totalFeedback } = useContext(Context);
 
-  return ( 
+  return (
     <>
       <Section title="Please leave your feedback:">
         <FeedbackOptions
@@ -18,11 +18,11 @@ export default function App() {
 
       <Section title="Statistics:">
         {totalFeedback ? (
-          <Statistics/>
+          <Statistics />
         ) : (
           <Notification message="There is no feedback yet." />
         )}
       </Section>
     </>
-  )
+  );
 };
